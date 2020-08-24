@@ -64,11 +64,10 @@ function createTable (rows, columns) {
   
       for (let j = 1; j < columns + 1; j++) {
         const td = document.createElement('td')
-        ID = rows * columns;
+        ID = i*j;
         td.setAttribute('id', 'ID')
         td.innerHTML = Math.floor(Math.random() * 10)
         tr.appendChild(td)
-        console.log(ID);
       }
   
       tabela.appendChild(tr)
@@ -78,6 +77,15 @@ function createTable (rows, columns) {
 }
 
 createTable(3, 5)
+
+function tableClick(event){
+    if(event.target.tagName == 'TD'){
+        alert()
+    }
+}
+
+document.getElementById('table').addEventListener('click', tableClick)
+
 
 
 // Peti
@@ -91,3 +99,71 @@ function digitalWatch(){
 }
 
 setInterval(digitalWatch, 1000);
+
+
+// Sesti
+
+function stopwatch(){
+
+}
+
+
+
+// Deveti
+
+function getRandomColor(){
+    let red = Math.ceil(Math.random() * 256);
+    let green = Math.ceil(Math.random() * 256);
+    let blue = Math.ceil(Math.random() * 256);
+  
+    let color = `rgb(${red}, ${green}, ${blue})`;
+  
+    return color;
+}
+
+function getRadnomSize(){
+    let size = Math.ceil(Math.random()*20 + 180) + 'px';
+    return size;
+}
+
+function getLeftMargin(ballDimension){
+    let leftMargin = Math.floor(Math.random()*500 - ballDimension) + 'px';
+    return leftMargin
+}
+
+function getTopMargin(ballDimension){
+    let topMargin = Math.floor(Math.random()*500 - ballDimension) + 'px';
+    return topMargin;
+}
+
+function ball(){
+    document.getElementById('loptica1').style.color = getRandomColor();
+    document.getElementById('loptica2').style.color = getRandomColor();
+    document.getElementById('loptica3').style.color = getRandomColor();
+    document.getElementById('loptica4').style.color = getRandomColor();
+    document.getElementById('loptica5').style.color = getRandomColor();
+
+    document.getElementById('loptica1').style.width = getRadnomSize();
+    document.getElementById('loptica1').style.height = document.getElementById('loptica1').style.width;
+    document.getElementById('loptica2').style.width = getRadnomSize();
+    document.getElementById('loptica2').style.height = document.getElementById('loptica2').style.width;
+    document.getElementById('loptica3').style.width = getRadnomSize();
+    document.getElementById('loptica3').style.height = document.getElementById('loptica3').style.width;
+    document.getElementById('loptica4').style.width = getRadnomSize();
+    document.getElementById('loptica4').style.height = document.getElementById('loptica4').style.width;
+    document.getElementById('loptica5').style.width = getRadnomSize();
+    document.getElementById('loptica5').style.height = document.getElementById('loptica5').style.width;
+
+    document.getElementById('loptica1').style.marginLeft = getLeftMargin(document.getElementById('loptica1').style.width);
+    document.getElementById('loptica1').style.marginTop = getTopMargin(document.getElementById('loptica1').style.height);
+    document.getElementById('loptica2').style.marginLeft = getLeftMargin(document.getElementById('loptica2').style.width);
+    document.getElementById('loptica2').style.marginTop = getTopMargin(document.getElementById('loptica2').style.height);
+    document.getElementById('loptica3').style.marginLeft = getLeftMargin(document.getElementById('loptica3').style.width);
+    document.getElementById('loptica3').style.marginTop = getTopMargin(document.getElementById('loptica3').style.height);
+    document.getElementById('loptica4').style.marginLeft = getLeftMargin(document.getElementById('loptica4').style.width);
+    document.getElementById('loptica4').style.marginTop = getTopMargin(document.getElementById('loptica4').style.height);
+    document.getElementById('loptica5').style.marginLeft = getLeftMargin(document.getElementById('loptica5').style.width);
+    document.getElementById('loptica5').style.marginTop = getTopMargin(document.getElementById('loptica5').style.height);
+}
+
+ball();
