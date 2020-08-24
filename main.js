@@ -77,5 +77,17 @@ function createTable (rows, columns) {
     return document.getElementById('table').appendChild(tabela)
 }
 
-
 createTable(3, 5)
+
+
+// Peti
+
+function digitalWatch(){
+    let hours = new Date().getHours();
+    let minutes = new Date().getMinutes();
+    let seconds = new Date().getSeconds();
+
+    document.getElementById('watch').innerHTML = hours + ':' + minutes + ':' + seconds;
+}
+
+setInterval(digitalWatch, 1000);
