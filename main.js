@@ -8,7 +8,28 @@ function formatNumber (num, numOfZeros){
         zeros += '0'
     }
 
-    console.log(zeros + br)
+    return zeros + br;
 }
 
-formatNumber(99, 3)
+console.log(formatNumber(78, 5));
+
+
+// Drugi
+
+function numberOfVocals(text){
+    const vocals = ['a', 'e', 'i', 'o', 'u'];
+    let counter = 0;
+
+    for (let i=0; i<text.length; i++)
+        if (vocals.includes(text.charAt(i))){
+            counter++;
+        }
+
+    return counter;
+}
+
+console.log(numberOfVocals('aedf ifuo fafea'))
+
+
+// Treci
+
