@@ -9,3 +9,7 @@
 #kosarka{
     display: none;
 }
+
+table, td{
+    border: 1px solid black;
+}

@@ -52,3 +52,30 @@ function openBasketballTab(){
 document.getElementById("btnFudbal").addEventListener("click", openFootballTab);
 document.getElementById("btnTenis").addEventListener("click", openTenisTab);
 document.getElementById("btnKosarka").addEventListener("click", openBasketballTab);
+
+
+// Cetvrti
+
+function createTable (rows, columns) {
+    const tabela = document.createElement('table')
+  
+    for (let i = 1; i < rows + 1; i++) {
+      const tr = document.createElement('tr')
+  
+      for (let j = 1; j < columns + 1; j++) {
+        const td = document.createElement('td')
+        ID = rows * columns;
+        td.setAttribute('id', 'ID')
+        td.innerHTML = Math.floor(Math.random() * 10)
+        tr.appendChild(td)
+        console.log(ID);
+      }
+  
+      tabela.appendChild(tr)
+    }
+  
+    return document.getElementById('table').appendChild(tabela)
+}
+
+
+createTable(3, 5)
