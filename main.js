@@ -33,3 +33,22 @@ console.log(numberOfVocals('aedf ifuo fafea'))
 
 // Treci
 
+function openFootballTab(){
+    document.getElementById("fudbal").style.display = "block";
+    document.getElementById("tenis").style.display = "none";
+    document.getElementById("kosarka").style.display = "none";
+}
+function openTenisTab(){
+    document.getElementById("fudbal").style.display = "none";
+    document.getElementById("tenis").style.display = "block";
+    document.getElementById("kosarka").style.display = "none";
+}
+function openBasketballTab(){
+    document.getElementById("fudbal").style.display = "none";
+    document.getElementById("tenis").style.display = "none";
+    document.getElementById("kosarka").style.display = "block";
+}
+
+document.getElementById("btnFudbal").addEventListener("click", openFootballTab);
+document.getElementById("btnTenis").addEventListener("click", openTenisTab);
+document.getElementById("btnKosarka").addEventListener("click", openBasketballTab);
