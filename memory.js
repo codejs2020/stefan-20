@@ -1,28 +1,50 @@
 //const cardNumbers = generateTable(3, 4)
 
-function generateTable(rows, columns) {
-    const listOfCards = []
-    let arr = numbersArray(rows, columns);
+const data = generateTable(3, 4)
 
-    for (let i = 0; i < rows; i++) {
-        listOfCards[i] = [];
-        for (let j = 0; j < columns; j++) {
-            arr = shuffle(arr);
-            listOfCards[i][j] = arr[j];
+drawTable(3, 4, data)
+let temp = ''
+function clickOnTable(event) {
+    if (event.target.tagName == 'DIV' && !event.target.classList.contains('locked')) {
+        const element= event.target
+        element.classList.add('visible')
+        if (temp !== '') {
+            setTimeout(() => {
+                if (element.textContent === temp) {
+                    document.querySelector('.visible').classList.add('locked')
+                    document.querySelector('.visible').classList.remove('visible')
+                    
+                    document.querySelector('.visible').classList.add('locked')
+                    document.querySelector('.visible').classList.remove('visible')
+                        
+                } else {
+                    document.querySelector('.visible').classList.remove('visible')
+                    document.querySelector('.visible').classList.remove('visible')
+                }
+                temp = ''
+                console.log('a')
+            },1000)
+        } else {
+            temp = element.textContent
+            console.log('b')
+
         }
     }
-
-    return listOfCards;
 }
 
-console.log(generateTable(3, 4))
+document.getElementById('frame').addEventListener('click',clickOnTable)
 
-function drawTable(rows, columns){
-    const card = document.createElement('div');
+function generateTable(rows, columns) {
+    let arr = numbersArray(rows, columns);
+    return shuffle(arr)
+}
 
+function drawTable(rows, columns,data){
+    let index =0
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns; j++) {
-            card.textContent = 
+            const card = document.createElement('div');
+            card.textContent = data[index++]
             document.getElementById('frame').appendChild(card);
         }
     }
@@ -33,9 +55,9 @@ function numbersArray(x, y) {
     let randomIndex;
 
     for (let i = 0; i < x * y / 2; i++) {
-        niz[i] = i;
+        niz.push(i)
+        niz.push(i)
     }
-    niz += niz;
 
     return niz;
 }
@@ -46,5 +68,6 @@ function shuffle(array) {
   
       [array[i], array[j]] = [array[j], array[i]];
     }
+    return array
   }
   
