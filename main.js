@@ -59,10 +59,10 @@ document.getElementById("btnKosarka").addEventListener("click", openBasketballTa
 function createTable (rows, columns) {
     const tabela = document.createElement('table')
   
-    for (let i = 1; i < rows + 1; i++) {
+    for (let i = 0; i < rows; i++) {
       const tr = document.createElement('tr')
   
-      for (let j = 1; j < columns + 1; j++) {
+      for (let j = 0; j < columns; j++) {
         const td = document.createElement('td')
         td.innerHTML = Math.floor(Math.random() * 10)
         tr.appendChild(td)
