@@ -44,3 +44,24 @@ drawBall('loptica7');
 drawBall('loptica8');
 drawBall('loptica9');
 drawBall('loptica10');
+
+
+
+
+
+function rand(from,to){
+    return Math.floor(Math.random() * to-from) + from
+}
+function randomBall() {
+    let x = rand(200,1000)
+    let y = rand(200,500)
+    let size = rand(5,150)
+    let color = `rgb(${rand(0,255)},${rand(0,255)},${rand(0,255)})`
+
+    let html = `<div class='ball' style='width:${size}px;height:${size}px;left:${x}px;top:${y}px;background:${color}'></div>`
+    document.body.innerHTML += html
+}
+
+for (let i = 0; i < 10; i++) {
+    randomBall()
+}

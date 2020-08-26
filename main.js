@@ -64,8 +64,6 @@ function createTable (rows, columns) {
   
       for (let j = 1; j < columns + 1; j++) {
         const td = document.createElement('td')
-        ID = i*j;
-        td.setAttribute('id', 'ID')
         td.innerHTML = Math.floor(Math.random() * 10)
         tr.appendChild(td)
       }
@@ -80,7 +78,7 @@ createTable(3, 5)
 
 function tableClick(event){
     if(event.target.tagName == 'TD'){
-        alert()
+        alert(event.target.textContent)
     }
 }
 
