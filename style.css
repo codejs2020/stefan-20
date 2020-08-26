@@ -14,25 +14,6 @@ table, td{
     border: 1px solid black;
 }
 
-#frame {
-    width: 500px;
-    height: 500px;
-    border: 2px solid black;
-    margin: 0 auto;
-}
-
-#loptica1{
-    border-radius: 50%;
-}
-#loptica2{
-    border-radius: 50%;
-}
-#loptica3{
-    border-radius: 50%;
-}
-#loptica4{
-    border-radius: 50%;
-}
-#loptica5{
+#loptica{
     border-radius: 50%;
 }
