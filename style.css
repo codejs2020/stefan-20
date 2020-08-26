@@ -13,3 +13,14 @@
 table, td{
     border: 1px solid black;
 }
+
+div {
+    width: 30px;
+    height: 50px;
+    display: flex;
+    background: grey;
+}
+
+#frame {
+    display: flex;
+}
