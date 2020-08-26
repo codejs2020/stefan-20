@@ -11,7 +11,7 @@ function getRandomColor(){
 }
 
 function getRadnomSize(){
-    let size = Math.ceil(Math.random()*180 + 20) + 'px';
+    let size = Math.ceil(Math.random()*350 + 50) + 'px';
     return size;
 }
 
@@ -25,14 +25,22 @@ function getTopMargin(){
     return topMargin;
 }
 
-function drawBall(){
-    let ballSize;
-    document.getElementById('loptica').style.background = getRandomColor();
-    document.getElementById('loptica').style.width = getRadnomSize();
-    ballSize = document.getElementById('loptica').style.width;
-    document.getElementById('loptica').style.height = document.getElementById('loptica').style.width;
-    document.getElementById('loptica').style.marginLeft = getLeftMargin();
-    document.getElementById('loptica').style.marginTop = getTopMargin();
+function drawBall(id){
+    document.getElementById(id).style.background = getRandomColor();
+    document.getElementById(id).style.width = getRadnomSize();
+    document.getElementById(id).style.height = document.getElementById(id).style.width;
+    document.getElementById(id).style.marginLeft = getLeftMargin();
+    document.getElementById(id).style.marginTop = getTopMargin();
+    document.getElementById(id).style.borderRadius = '50%';
 }
 
-drawBall();
+drawBall('loptica1');
+drawBall('loptica2');
+drawBall('loptica3');
+drawBall('loptica4');
+drawBall('loptica5');
+drawBall('loptica6');
+drawBall('loptica7');
+drawBall('loptica8');
+drawBall('loptica9');
+drawBall('loptica10');
